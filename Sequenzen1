@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Sequenzen {
+    public static void main(String[] args) {
+        //Minutenrechner
+        minutesCalculator();
+
+        // Rechteck
+        calculateRectangle();
+
+        // Kraftstoffverbrauch
+        calculateFuelConsumption();
+
+
+    }
+
+    private static void calculateFuelConsumption() {
+        Scanner fuelConsumptionScanner = new Scanner(System.in);
+        System.out.println("Geben Sie die gefahrenen Kilometer ein:");
+        float km = fuelConsumptionScanner.nextFloat();
+        System.out.println("Geben Sie die Menge des verbrauchten Kraftstoffes ein:");
+        float l = fuelConsumptionScanner.nextFloat();
+        System.out.println("Der durchschnittliche Verbrauch beträgt " + (l / km  * 100) + " Liter/100 km.");
+    }
+
+    private static void calculateRectangle() {
+        Scanner sideLengthScanner = new Scanner(System.in);
+        System.out.println("Geben Sie die Seitenlänge a ein:");
+        int a = sideLengthScanner.nextInt();
+        System.out.println("Geben Sie die Seitenlänge b ein:");
+        int b = sideLengthScanner.nextInt();
+        System.out.println("Der Umfang beträgt: " + ( a*2+b*2) + " und die Fläche " + (a * b)) ;
+    }
+
+    private static void minutesCalculator() {
+        Scanner secScanner = new Scanner(System.in);
+        System.out.println("Geben Sie die Sekunden ein: ");
+        float sec = secScanner.nextInt();
+        float minute = sec / 60;
+        System.out.println(sec + " Sekunden sind " + minute + " Minuten.");
+    }
+}
