@@ -1,0 +1,16 @@
+public class IterationenII {
+    public static void main(String[] args) {
+  
+        String number = "3752";
+        int numberInt = Integer.parseInt(number);
+        int checksum = 0;
+
+        while (numberInt > 0) {
+            int lastDigget = numberInt % 10;        // Modulo wird benutzt, um die letzte Ziffer abzuspalten
+            checksum = checksum + lastDigget;
+            numberInt = numberInt / 10;             // geteilt durch 10, um die letzt Ziffer zu entfernen und dadurch die NAchkommastelle wegfällt
+        }
+        System.out.println(checksum);
+    }
+}
+
