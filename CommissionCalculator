@@ -1,0 +1,20 @@
+import java.text.MessageFormat;
+import java.util.Scanner;
+
+public class CommissionCalculator {
+    public static void main(String[] args) {
+        double commission;
+        System.out.println("Enter your sales: ");
+        Scanner salesScanner = new Scanner(System.in);
+        double sales = salesScanner.nextDouble();
+
+        if (sales < 300000) {
+            commission = sales * 0.03;
+        } else if (sales > 350000) {
+            commission = sales * 0.1;
+        } else {
+            commission = (sales * 0.06);
+        }
+        System.out.println(MessageFormat.format("The commission is {0,number,#.##} Euro.", commission));
+    }
+}
