@@ -1,0 +1,37 @@
+public class Zahlenreihen {
+    public static void main(String[] args) {
+        // Zahlenreihen 1a
+        for (int i = 3; i < 20; ) {
+            i += 4;
+            System.out.print(i + " ");
+        }
+        System.out.println("");
+
+        // Zahlenreihe 1b
+        for (int i = 8; i < 257; ) {
+            i *= 2;
+            System.out.print(i + " ");
+        }
+        System.out.println("");
+
+        // Zahlenreihe 1c
+        for (int i = 243; i > 2; ) {
+            System.out.print(i + " ");
+            i /= 3;
+        }
+        System.out.println("");
+
+        // Zahlenreihe 1d
+        for (int i = 1; i < 8; i++) {
+            System.out.print(i % 2 + " ");
+        }
+        System.out.println("");
+
+        // Das kleine 1x5
+        for (int i = 1; i <11;) {
+            int result = i * 5;
+            System.out.println(i + " x 5 = " + result);
+            i++;
+        }
+    }
+}
