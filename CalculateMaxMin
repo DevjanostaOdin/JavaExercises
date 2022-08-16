@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Arrays {
+    public static void main(String[] args) {
+        int[] numbers = {3, 15, 7, 6};
+        
+        // 1. Summe berechnen
+        calculateSum(numbers);
+
+        // 2. Maximum und Minimum bestimmen
+        calculateMaxMin(numbers);
+
+    }
+        private static void calculateMaxMin ( int[] numbers){
+            int max = numbers[0];
+            int min = numbers[0];
+
+            for (int i : numbers) {
+                if (max < i) {
+                    max = i;
+                }
+            }
+            System.out.println("Die gröte Zahl ist " + max);
+
+            for (int i : numbers) {
+                if (min > i) {
+                    min = i;
+                }
+            }
+            System.out.println("Die kleinste Zahl ist " + min);
+        }
+
+        private static void calculateSum ( int[] numbers){
+            int sum = 0;
+
+            for (int i : numbers) {
+                sum += i;
+            }
+            System.out.println(sum);
+
+    }
+}
