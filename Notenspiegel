@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Klassenspiegel {
+    public static void main(String[] args) {
+        //scanner, der die prozentzahl aufnimmt
+        //prozentzahl umrechnen in jeweiligen notenbereich
+        // array dann bei entsprechender note um 1 erhöhen
+        // Klassenschnitt ermitteln: prozentwerte summieren / anzahl eingegebener zahlen
+
+        //Noten: 92, 80, 29, 81, 100, 66, 91, 50, 70, 82, 30, 85, 96, 67  14Noten
+
+        Scanner gradesScanner = new Scanner(System.in);
+        System.out.println("Wie viele Noten wollen Sie eingeben?:");
+        int quantity = gradesScanner.nextInt();
+        int[] grades = new int[6];
+        System.out.println("Geben Sie die Prozentzahl ein:");
+        int sum = 0;
+        for (int i = 0; i < quantity; i++) {
+            int percent = gradesScanner.nextInt();
+            sum = sum + percent;
+            if (percent >= 92) {
+                grades[0] += 1;
+            } else if (percent >= 81) {
+                grades[1] += 1;
+            } else if (percent >= 67) {
+                grades[2] += 1;
+            } else if (percent >= 50) {
+                grades[3] += 1;
+            } else if (percent >= 30) {
+                grades[4] += 1;
+            } else if (percent >= 0) {
+                grades[5] += 1;
+            }
+        }
+        for (int i = 1; i < 7; i++) {
+            System.out.println(i + " | " + grades[i - 1]);
+        }
+        System.out.println("Durchschnitt: " + sum/quantity + " % ");
+    }
+}
+
