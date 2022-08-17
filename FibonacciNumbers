@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class FibonacciNumbers {
+    public static void main(String[] args) {
+    /*    Scanner maxScanner = new Scanner(System.in);
+        System.out.println("Enter Maximum Value: ");
+        int maxValue = maxScanner.nextInt();
+        int a = 1;
+        int b = 2;
+        int c;
+        int sum = 0;
+        System.out.print(a + ", " + b + ", ");
+        for (int i = 1; i < maxValue; i++) {
+            c = a + b;
+            System.out.print(c + ", ");
+            a = b;
+            b = c;
+            if (c % 2 == 0) {
+                sum += c;
+            }
+        }
+        System.out.println();
+        System.out.println("Die Summe der geraden Zahlen ist " + sum);
+    */
+        Scanner maxScanner = new Scanner(System.in);
+        System.out.println("Enter Maximum Value: ");
+        int maxValue = maxScanner.nextInt();
+        int a = 1;
+        int b = 2;
+        int c = 0;
+        int sum = 0;
+        System.out.print(a + ", " + b + ", ");
+        while (c + a < maxValue) {
+            c = a + b;
+            System.out.print(c + ", ");
+            a = b;
+            b = c;
+            if (c % 2 == 0) {
+                sum += c;
+            }
+        }
+        System.out.println();
+        System.out.println("Die Summe der geraden Zahlen ist " + sum);
+    }
+}
