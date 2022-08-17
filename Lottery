@@ -1,0 +1,29 @@
+import java.util.Arrays;
+
+public class Lottozahlen {
+    public static void main(String[] args) {
+        int[] lottery = new int[6];
+        int drawnNumber;
+        boolean numberFound = false;
+// Schleife
+        // random Zahl ausrechnen
+        // prüfen, ob die im Array vorhanden ist
+        // wenn ja, nochmal random ausführen
+        // wenn nein, hinzufügen
+        // Ausgabe erst, wenn alle Zahlen vorhanden sind
+        for (int i = 0; i < lottery.length; i++) {
+            drawnNumber = (int) (Math.random() * 49 + 1);
+            //   System.out.println(drawnNumber);
+            if (drawnNumber == lottery[i]) {
+                numberFound = true;
+            }
+            if (numberFound) {
+                lottery[i] = (int) (Math.random() * 49 + 1);
+            } else {
+                lottery[i] = drawnNumber;
+            }
+            Arrays.stream(lottery).max();
+            System.out.println(lottery[i]);
+        }
+    }
+}
