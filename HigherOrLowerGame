@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class HigherOrLower {
+    public static void main(String[] args) {
+        // Higher or Lower, gesuchte Zahl finden
+        String input = " ";
+        do {
+            Scanner difficultyScanner = new Scanner(System.in);
+            System.out.println("Geben Sie das Schwierigkeitslevel ein.");
+            System.out.println("1 fuer Zahlen von 1 bis 10.");
+            System.out.println("2 fuer Zahlen von 1 bis 100.");
+            System.out.println("3 fuer Zahlen von 1 bis 1000.");
+            System.out.println("Oder geben Sie eine eigene Hoechstzahl ein.");
+            int difficulty = difficultyScanner.nextInt();
+            switch (difficulty) {
+                case 1:
+                    int numberInput = 0;
+                    int random = (int) (Math.random() * 10 + 1);
+                    createRandom(random, numberInput);
+                    break;
+                case 2:
+                    numberInput = 0;
+                    random = (int) (Math.random() * 100 + 1);
+                    createRandom(random, numberInput);
+                    break;
+                case 3:
+                    numberInput = 0;
+                    random = (int) (Math.random() * 1000 + 1);
+                    createRandom(random, numberInput);
+                    break;
+                default:
+                    numberInput = 0;
+                    random = (int) (Math.random() * difficulty + 1);
+                    createRandom(random, numberInput);
+            }
+            Scanner repeat = new Scanner(System.in);
+            System.out.println("Wollen Sie erneut eine Runde spielen? J/N:");
+            input = repeat.nextLine();
+        } while (input.equals("J") | input.equals("j"));
+    }
+
+    private static void createRandom(int random, int numberInput) {
+        while (random != numberInput) {
+            Scanner userInput = new Scanner(System.in);
+            System.out.println("Geben Sie eine Zahl ein: ");
+            numberInput = userInput.nextInt();
+            if (numberInput > random) {
+                System.out.println("Die gesuchte Zahl ist kleiner als " + numberInput + ".");
+            } else if (numberInput < random) {
+                System.out.println("Die gesuchte Zahl ist groesser als " + numberInput + ".");
+            } else {
+                System.out.println("Richtig!");
+                break;
+            }
+        }
+    }
+}
