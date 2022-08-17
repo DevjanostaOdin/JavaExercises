@@ -1,0 +1,20 @@
+ // 3. Suche
+        String[] words = {"car", "house", "tree", "dog"};
+        Scanner wordScan = new Scanner(System.in);
+        System.out.println("Geben Sie das gesucht Wort ein: ");
+        String wordToSearch = wordScan.nextLine();
+
+        String ausgabeText = "Das Wort ist nicht enthalten.";  //wird genutzt für Persistierung aka dauerhaft speichern
+        //setzt die Suche nach dem Wort standartmäßig auf nicht enthalten
+
+        for (int word = 0; word < words.length; word++) {
+            if (wordToSearch.equals(words[word])) {
+                ausgabeText = "Das Wort ist enthalten.";
+                                                        //setzt die Suche nach dem Wort auf enthalten
+            }
+        }
+        /*if (!wordFound){
+            System.out.println("Das Wort ist nicht enthalten.");
+        }*/
+        System.out.println(ausgabeText); //da der Wert standartmäßig auf nicht enthalten gesetzt wurde,
+                                        // muss keine extra Prüfung erfolgen
