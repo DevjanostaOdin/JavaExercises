@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class SchereSteinPapier {
+    public static void main(String[] args) {
+
+        boolean repeat = true;
+        int winCounterPlayer1 = 0;
+        int winCounterPlayer2 = 0;
+        while (repeat) {
+
+            Scanner player = new Scanner(System.in);
+            System.out.println("Spieler 1: Was waehlst du? ");
+            System.out.println("1 = Schere");
+            System.out.println("2 = Stein");
+            System.out.println("3 = Papier");
+            System.out.println("4 = Echse");
+            System.out.println("5 = Shpock");
+
+            String[] weapon = {"Schere", "Stein", "Papier", "Echse", "Shpock"};
+            int player1 = player.nextInt();
+            int player2 = (int) (Math.random() * 5 + 1);
+
+            System.out.println("Spieler 1: "+ weapon[player1-1] + "| Spieler 2:" + weapon[player2-1]);
+
+            if (player1 == player2) {
+                System.out.println("Gleichstand! Nochmal!");
+            } else if (player1 == 1) {
+                if (player2 == 3 || player2 == 4) {
+                    System.out.println("Spieler 1 gewinnt!");
+                    winCounterPlayer1 ++;
+                } else {
+                    System.out.println("Spieler 2 gewinnt.");
+                    winCounterPlayer2 ++;
+                }
+            } else if (player1 == 2) {
+                if (player2 == 4 || player2 == 1) {
+                    System.out.println("Spieler 1 gewinnt!");
+                    winCounterPlayer1 ++;
+                } else {
+                    System.out.println("Spieler 2 gewinnt.");
+                    winCounterPlayer2 ++;
+                }
+            } else if (player1 == 3) {
+                if (player2 == 2 || player2 == 5) {
+                    System.out.println("Spieler 1 gewinnt!");
+                    winCounterPlayer1 ++;
+                } else {
+                    System.out.println("Spieler 2 gewinnt.");
+                    winCounterPlayer2 ++;
+                }
+            } else if (player1 == 4) {
+                if (player2 == 3 || player2 == 5) {
+                    System.out.println("Spieler 1 gewinnt!");
+                    winCounterPlayer1 ++;
+                } else {
+                    System.out.println("Spieler 2 gewinnt.");
+                    winCounterPlayer2 ++;}
+            } else if (player1 == 5) {
+                if (player2 == 1 || player2 == 2) {
+                    System.out.println("Spieler 1 gewinnt!");
+                    winCounterPlayer1 ++;
+                } else {
+                    System.out.println("Spieler 2 gewinnt.");
+                    winCounterPlayer2 ++;}
+            }
+            System.out.println("Spieler 1 hat " + winCounterPlayer1 + " Mal gewonnen.");
+            System.out.println("Spieler 2 hat " + winCounterPlayer2 + " Mal gewonnen.");
+
+            //Abfrage zur Wiederholung
+            Scanner repeater = new Scanner(System.in);
+            System.out.println("Weiter? J/j oder N/n:");
+            String input = repeater.nextLine();
+            repeat = input.equalsIgnoreCase("j");
+        }
+    }
+}
